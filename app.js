@@ -19,12 +19,12 @@ loginForm.addEventListener("submit", async (event) => {
         document.getElementById("pin").value;
 
     const { data, error } =
-        await supabaseClient
-            .from("members")
-            .select("*")
-            .eq("member_id", memberId)
-            .eq("pin", pin)
-            .single();
+    await supabaseClient
+        .from("members")
+        .select("*");
+        
+console.log(data);
+console.log(error);
 
     const message =
         document.getElementById("message");
