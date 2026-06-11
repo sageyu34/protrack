@@ -6,38 +6,24 @@ const supabaseClient = supabase.createClient(
     SUPABASE_KEY
 );
 
-const loginForm = document.getElementById("loginForm");
+async function testConnection() {
 
-loginForm.addEventListener("submit", async (event) => {
-
-    event.preventDefault();
-
-    const memberId =
-        document.getElementById("memberId").value;
-
-    const pin =
-        document.getElementById("pin").value;
-
-    const { data, error } =
-    await supabaseClient
+    const { data, error } = await supabaseClient
         .from("members")
         .select("*");
-        
-console.log(data);
-console.log(error);
 
     const message =
         document.getElementById("message");
 
-    if (error || !data) {
-
+    if (error) {
         message.textContent =
-            "Invalid Member ID or PIN";
+            "Error: " + error.message;
 
         return;
     }
 
     message.textContent =
-        `Welcome, ${data.full_name}`;
+        JSON.stringify(data, null, 2);
+}
 
-});
+testConnection();
