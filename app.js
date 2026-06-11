@@ -45,7 +45,12 @@ loginForm.addEventListener(
       return;
     }
 
-    message.textContent =
-      `Welcome, ${data.full_name}`;
+    localStorage.setItem(
+  "member",
+  JSON.stringify(data)
+);
+
+window.location.href =
+  "dashboard.html";
   }
 );
