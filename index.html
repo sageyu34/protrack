@@ -1,1 +1,46 @@
-<!-- Main entry point -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProTrack</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <main>
+        <h1>PROTRACK</h1>
+
+        <form id="loginForm">
+
+            <input
+                type="text"
+                id="memberId"
+                placeholder="Member ID"
+                required
+            >
+
+            <input
+                type="password"
+                id="pin"
+                placeholder="PIN"
+                required
+            >
+
+            <button type="submit">
+                Sign In
+            </button>
+
+        </form>
+
+        <p id="message"></p>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
