@@ -16,18 +16,28 @@
     <script>
 
         const member =
-            JSON.parse(
-                localStorage.getItem("member")
-            );
+    JSON.parse(
+        localStorage.getItem("member")
+    );
 
-        document
-            .getElementById("welcome")
-            .textContent =
-            `Welcome, ${member.full_name}`;
+document
+    .getElementById("welcome")
+    .textContent =
+    `Welcome, ${member.full_name}`;
+
+document
+    .getElementById("logout")
+    .addEventListener("click", () => {
+
+        localStorage.removeItem("member");
+
+        window.location.href =
+            "index.html";
+    });
 
     </script>
 
-    <script src="app.js"></script>
+
 
 </body>
 </html>
