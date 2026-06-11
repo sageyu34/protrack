@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <h1>Dashboard</h1>
+
+    <p id="welcome"></p>
+
+    <script>
+
+        const member =
+            JSON.parse(
+                localStorage.getItem("member")
+            );
+
+        document
+            .getElementById("welcome")
+            .textContent =
+            `Welcome, ${member.full_name}`;
+
+    </script>
+
+</body>
+</html>
