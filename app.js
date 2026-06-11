@@ -54,13 +54,3 @@ window.location.href =
   "dashboard.html";
   }
 );
-
-document
-    .getElementById("logout")
-    .addEventListener("click", () => {
-
-        localStorage.removeItem("member");
-
-        window.location.href =
-            "index.html";
-    });
